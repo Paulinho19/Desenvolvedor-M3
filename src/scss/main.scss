@@ -1,1 +1,78 @@
+$preto: #000;
+$cinza1: #00000080;
+$cinza2: #666;
+$primaria: #00c0ee;
+
 @import "reset";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 1744px;
+  width: 1500px;
+  font-family: "Open Sans", sans-serif;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+#navbar-container {
+  height: 48px;
+  width: 1500px;
+  margin-top: 10px;
+}
+
+#linha {
+  background-color: $cinza2;
+  width: 1500px;
+  height: 2px;
+}
+
+.imagens {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#categoria {
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    font-size: 2rem;
+  }
+
+  select {
+    height: 1.7rem;
+    font-size: 0.8rem;
+  }
+  #opcao {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+#principal {
+  display: flex;
+  gap: 22rem;
+  margin-top: 40px;
+}
+
+.marcacao {
+  display: flex;
+  flex-direction: column;
+}
+
+.rodape {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+}
