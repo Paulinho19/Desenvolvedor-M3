@@ -20,27 +20,28 @@
   <body>
     <nav id="navbar-container">
       <div class="imagens">
-        <img src="./img/logo-m3.png" alt="Logo da m3" />
+        <a href="/">
+          <img src="./img/logo-m3.png" alt="Logo da m3" />
+        </a>
         <img src="./img/sacola.png" alt="Sacola de pedidos" />
       </div>
     </nav>
-    <div id="linha"></div>
+    <div class="linha"></div>
 
     <section id="categoria">
       <p>Blusas</p>
 
       <div id="opcao">
-        <label for="opcoes">Ordenar por:</label>
         <select id="opcoes" name="opcoes">
-          <option value="recente">Mais recentes</option>
-          <option value="menor">Menor preço</option>
-          <option value="maior">Maior preço</option>
+          <option value="mais-recente">Mais recentes</option>
+          <option value="menor-preco">Menor preço</option>
+          <option value="maior-preco">Maior preço</option>
         </select>
       </div>
     </section>
 
     <main id="principal">
-      <aside>
+      <aside class="barra-lateral">
         <p class="cor">Cores</p>
         <div class="marcacao">
           <div>
@@ -71,12 +72,14 @@
 
       <section>
         <div id="productContainer"></div>
-        <button id="loadMoreButton">Carregar mais</button>
+        <div class="carregar-mais">
+          <button id="loadMoreButton">Carregar mais</button>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p class="rodape">Agência M3 - Agência de Performance Digital</p>
+    <footer class="rodape">
+      <p class="texto-rodape">Agência M3 - Agência de Performance Digital</p>
     </footer>
   </body>
 

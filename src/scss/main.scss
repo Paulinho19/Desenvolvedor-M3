@@ -17,85 +17,146 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0 auto;
   background-color: #fff;
-}
-
-#navbar-container {
-  height: 48px;
-  width: 1500px;
-  margin-top: 10px;
-}
-
-#linha {
-  background-color: $cinza2;
-  width: 1500px;
-  height: 2px;
-}
-
-.imagens {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#categoria {
-  display: flex;
-  margin-top: 40px;
-  align-items: center;
-  justify-content: space-between;
-  p {
-    font-size: 2rem;
+  #navbar-container {
+    height: 48px;
+    width: 1500px;
+    margin-top: 10px;
   }
 
-  select {
-    height: 1.7rem;
-    font-size: 0.8rem;
+  .linha {
+    background-color: $cinza2;
+    width: 1500px;
+    height: 2px;
   }
-  #opcao {
+
+  .imagens {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #categoria {
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      font-size: 2rem;
+    }
+
+    select {
+      height: 1.7rem;
+      font-size: 0.8rem;
+    }
+    #opcao {
+      display: flex;
+      border: 1px solid $preto;
+      flex-direction: column;
+      gap: 0.5rem;
+      #opcoes {
+        font-size: 1rem;
+        background-color: #fff;
+      }
+      option:hover {
+        background-color: $primaria;
+      }
+    }
+  }
+
+  #principal {
+    display: flex;
+    gap: 0.2rem;
+    margin-top: 40px;
+
+    .cor {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+  }
+
+  .marcacao {
     display: flex;
     flex-direction: column;
+    gap: 0.8rem;
+    font-size: 18px;
+  }
+
+  .rodape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    .texto-rodape {
+      width: 1500px;
+      height: 30px;
+      text-align: center;
+      margin-top: 20px;
+      position: absolute;
+      background-color: #000;
+      color: #fff;
+      padding: 0.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .barra-lateral {
+    width: 30rem;
+  }
+
+  #productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10rem;
+  }
+  .imagem-modelo {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .info-produto {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     gap: 0.5rem;
+    h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+    .preco {
+      font-weight: bold;
+    }
+
+    .botao-compra {
+      background-color: $preto;
+      color: #fff;
+      cursor: pointer;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.9rem;
+      width: 15rem;
+      height: 2.3rem;
+      border: none;
+    }
   }
-}
-
-#principal {
-  display: flex;
-  gap: 12rem;
-  margin-top: 40px;
-
-  .cor {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-  }
-}
-
-.marcacao {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-size: 20px;
-}
-
-.rodape {
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-  color: #fff;
-}
-
-#productContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 2rem;
-  #item {
-    flex-basis: calc(
-      33.33% - 10px
-    ); /* Cada item ocupará 33.33% da largura, com algum espaço para respirar */
-    margin-bottom: 10px; /* Espaço entre os itens */
-    box-sizing: border-box; /* Inclui borda e preenchimento no cálculo da largura */
-    border: 1px solid #ccc; /* Borda para destacar os itens (opcional) */
-    padding: 10px; /* Preenchimento interno (opcional) */
+  .carregar-mais {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    #loadMoreButton {
+      background-color: $primaria;
+      margin-top: 30px;
+      height: 2rem;
+      width: 10rem;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
   }
 }
