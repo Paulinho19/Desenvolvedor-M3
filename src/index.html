@@ -13,6 +13,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="main.css" />
+
+    <script defer src="./ts/index.ts"></script>
   </head>
 
   <body>
@@ -39,22 +41,37 @@
 
     <main id="principal">
       <aside>
-        <p>Cores</p>
+        <p class="cor">Cores</p>
         <div class="marcacao">
-          <input type="checkbox" id="meuCheckbox" name="meuCheckbox" />
-          <label for="meuCheckbox">Marque esta caixa:</label>
-          <input type="checkbox" id="meuCheckbox" name="meuCheckbox" />
-          <label for="meuCheckbox">Marque esta caixa:</label>
-          <input type="checkbox" id="meuCheckbox" name="meuCheckbox" />
-          <label for="meuCheckbox">Marque esta caixa:</label>
-          <input type="checkbox" id="meuCheckbox" name="meuCheckbox" />
-          <label for="meuCheckbox">Marque esta caixa:</label>
+          <div>
+            <input type="checkbox" id="amarelo" />
+            <label for="amarelo">Amarelo</label>
+          </div>
+          <div>
+            <input type="checkbox" id="azul" />
+            <label for="azul">Azul</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="branco" />
+            <label for="branco">Branco</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="cinza" />
+            <label for="cinza">Cinza</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="laranja" />
+            <label for="laranja">Laranja</label>
+          </div>
         </div>
       </aside>
 
       <section>
-        <p>Produtos</p>
-        <button>Carregar mais</button>
+        <div id="productContainer"></div>
+        <button id="loadMoreButton">Carregar mais</button>
       </section>
     </main>
 

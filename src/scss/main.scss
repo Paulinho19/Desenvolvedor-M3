@@ -59,13 +59,20 @@ body {
 
 #principal {
   display: flex;
-  gap: 22rem;
+  gap: 12rem;
   margin-top: 40px;
+
+  .cor {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
 }
 
 .marcacao {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
+  font-size: 20px;
 }
 
 .rodape {
@@ -75,4 +82,20 @@ body {
   justify-content: center;
   background-color: #000;
   color: #fff;
+}
+
+#productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  #item {
+    flex-basis: calc(
+      33.33% - 10px
+    ); /* Cada item ocupará 33.33% da largura, com algum espaço para respirar */
+    margin-bottom: 10px; /* Espaço entre os itens */
+    box-sizing: border-box; /* Inclui borda e preenchimento no cálculo da largura */
+    border: 1px solid #ccc; /* Borda para destacar os itens (opcional) */
+    padding: 10px; /* Preenchimento interno (opcional) */
+  }
 }
