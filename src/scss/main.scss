@@ -41,7 +41,7 @@ body {
     align-items: center;
     justify-content: space-between;
     p {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     select {
@@ -79,6 +79,7 @@ body {
     flex-direction: column;
     gap: 0.8rem;
     font-size: 18px;
+    height: 20px;
   }
 
   .rodape {
@@ -88,7 +89,7 @@ body {
     margin-top: 20px;
     .texto-rodape {
       width: 1500px;
-      height: 30px;
+      height: 40px;
       text-align: center;
       margin-top: 20px;
       position: absolute;
@@ -135,9 +136,9 @@ body {
       align-items: center;
       text-transform: uppercase;
       font-weight: bold;
-      font-size: 0.9rem;
+      font-size: 1.2rem;
       width: 15rem;
-      height: 2.3rem;
+      height: 2.8rem;
       border: none;
     }
   }
@@ -149,11 +150,12 @@ body {
     #loadMoreButton {
       background-color: $primaria;
       margin-top: 30px;
-      height: 2rem;
-      width: 10rem;
+      margin-bottom: 15px;
+      height: 3rem;
+      width: 12rem;
       border: none;
       color: #fff;
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: bold;
       text-transform: uppercase;
       cursor: pointer;
