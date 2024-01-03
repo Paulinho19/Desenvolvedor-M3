@@ -76,11 +76,12 @@ body {
     }
     #opcao {
       display: flex;
-      border: 1px solid $preto;
+      border: 1px solid $cinza2;
+      font-size: 1.2rem;
       flex-direction: column;
       gap: 0.5rem;
       #opcoes {
-        font-size: 1rem;
+        font-size: 1.2rem;
         background-color: #fff;
       }
       option:hover {
@@ -91,7 +92,7 @@ body {
 
   #principal {
     display: flex;
-    gap: 0.2rem;
+    gap: 8rem;
     margin-top: 40px;
 
     .cor {
@@ -128,6 +129,31 @@ body {
 
   .barra-lateral {
     width: 30rem;
+    .veja-mais-cores {
+      margin-top: 2px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      color: $cinza1;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .titulo-tamanho {
+      text-transform: uppercase;
+      font-size: 1.3rem;
+    }
+    .tamanhos-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .tamanho {
+      height: 30px;
+      width: 30px;
+      border: 1px solid $cinza2;
+      font-size: 1rem;
+      cursor: pointer;
+    }
   }
 
   #productContainer {
@@ -153,6 +179,17 @@ body {
     }
     .preco {
       font-weight: bold;
+    }
+
+    .precos-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 5rem;
+      .range-precos {
+        gap: 2rem;
+        font-size: 2rem;
+      }
     }
 
     .botao-compra {

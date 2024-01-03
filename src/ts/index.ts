@@ -21,12 +21,14 @@ function renderProduct(product: Product, index: number): HTMLDivElement {
 
 
   productElement.innerHTML = `
+  <div class="container-models">
   <img class="imagem-modelo" src="${imageSrc}" alt="modelo" />
   <div class="info-produto">
   <h3>${product.name}</h3>
   <p class="preco">${formattedPriceString}</p>
   <p>até ${product.parcelamento.join('x de R$')}</p>
   <button class="botao-compra">Comprar</button>
+  </div>
   </div>
   `;
   const buyButton = productElement.querySelector('.botao-compra');
@@ -92,6 +94,14 @@ async function fetchProducts(): Promise<Product[]> {
   }));
 }
 
+enum Ordenacao {
+  MaisRecente = "mais-recente",
+  MenorPreco = "menor-preco",
+  MaiorPreco = "maior-preco",
+}
+
+let opcaoOrdenacao = Ordenacao.MaisRecente;
+
 async function main(): Promise<void> {
   try {
     const productsData = await fetchProducts();
@@ -111,6 +121,8 @@ async function main(): Promise<void> {
         }
       });
     }
+
+    
   } catch (error) {
     console.error(error);
   }

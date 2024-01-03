@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,11 +39,14 @@
       <p>Blusas</p>
 
       <div id="opcao">
-        <select id="opcoes" name="opcoes">
-          <option value="mais-recente">Mais recentes</option>
-          <option value="menor-preco">Menor preço</option>
-          <option value="maior-preco">Maior preço</option>
-        </select>
+        <form id="opcao">
+          <label for="opcoes">Ordenar por:</label>
+          <select id="opcoes">
+            <option value="mais-recente">Mais recentes</option>
+            <option value="menor-preco">Menor preço</option>
+            <option value="maior-preco">Maior preço</option>
+          </select>
+        </form>
       </div>
     </section>
 
@@ -51,29 +54,80 @@
       <aside class="barra-lateral">
         <p class="cor">Cores</p>
         <div class="marcacao">
-          <div>
-            <input type="checkbox" id="amarelo" />
-            <label for="amarelo">Amarelo</label>
-          </div>
-          <div>
-            <input type="checkbox" id="azul" />
-            <label for="azul">Azul</label>
-          </div>
+          
+            <label>
+            <input type="checkbox"/>
+            Amarelo
+          </label>
+          
+          <label>
+            <input type="checkbox" name="azul" value="azul"/>
+            Azul</label>
+          
 
-          <div>
-            <input type="checkbox" id="branco" />
-            <label for="branco">Branco</label>
-          </div>
+            <label>
+            <input type="checkbox" name="branco" value="branco"/>
+            Branco
+          </label>
+          
+          <label>
+            <input type="checkbox" name="cinza" value="cinza"/>
+           Cinza</label>
+          
 
-          <div>
-            <input type="checkbox" id="cinza" />
-            <label for="cinza">Cinza</label>
-          </div>
+           <label>
+            <input type="checkbox" name="laranja" value="laranja"/>
+            Laranja</label>
+          </form>
 
-          <div>
-            <input type="checkbox" id="laranja" />
-            <label for="laranja">Laranja</label>
+
+          <h2 class="veja-mais-cores">Ver todas as cores</h2>
+          <h3 class="titulo-tamanho">Tamanhos</h3>
+          <form class="tamanhos-container">
+            <option class="tamanho">P</option>
+            <option class="tamanho">M</option>
+            <option class="tamanho">G</option>
+            <option class="tamanho">GG</option>
+            <option class="tamanho">U</option>
+            <option class="tamanho">36</option>
+            <option class="tamanho">38</option>
+            <option class="tamanho">40</option>
+            <option class="tamanho">42</option>
+            <option class="tamanho">44</option>
+            <option class="tamanho">46</option>
+          </form>
+          <h2>Faixa de Preço</h2>
+          <form class="precos-container">
+            <div>
+            <label class="range-precos">
+              <input type="radio" name="valor" value="R$0 - R$50"> de R$0 até R$50
+            </label>
           </div>
+        <br>
+          <div>
+            <label >
+              <input type="radio" name="valor" value="R$51 - R$150" class="range-precos"> de R$51 até R$150
+            </label>
+          </div>
+          <br>
+          <div>
+            <label class="range-precos">
+              <input type="radio" name="valor" value="R$151 - R$300"> de R$151 até R$300
+            </label>
+          </div>
+          <br>
+          <div>
+            <label class="range-precos">
+              <input type="radio" name="valor" value="R$301 - R$500"> de R$301 até R$500
+            </label>
+          </div>
+          <br>
+          <div>
+            <label class="range-precos">
+              <input type="radio" name="valor" value="a partir de 01"> a partir de R$ 01
+            </label>
+          </div>
+          </form>
         </div>
       </aside>
 
