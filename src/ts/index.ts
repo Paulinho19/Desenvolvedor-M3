@@ -2,34 +2,22 @@ import { Product } from "./Product";
 
 const serverUrl = "http://localhost:5000/products";
 const itemsPerPage = 9;
-let currentPage = 1;
 let allProducts: Product[] = [];
+let itemCount = 0;
 
-function getImageNumber(index: number): number {
-  const baseImageNumber = 2;
-  const totalImageCount = 10 - baseImageNumber + 1;
-
-  // Se o índice for menor que o número total de imagens disponíveis (2 a 10), use a lógica existente.
-  if (index < totalImageCount) {
-    return baseImageNumber + index;
-  } else {
-    // Caso contrário, retorne sempre o número da última imagem disponível (10).
-    return 10;
-  }
-}
 
 function renderProduct(product: Product, index: number): HTMLDivElement {
   const productElement = document.createElement("div");
 
-  const imageSrc = `.${product.image}`; // Use o caminho relativo baseado no parâmetro 'image' do JSON
+  const imageSrc = `.${product.image}`; 
 
-  // Formatar o preço como moeda brasileira com duas casas decimais
+  
  const formattedPriceString = new Intl.NumberFormat('pt-BR', {
    style: 'currency',
    currency: 'BRL',
-   minimumFractionDigits: 2, // Definir o número mínimo de casas decimais
-   maximumFractionDigits: 2, // Definir o número máximo de casas decimais
- }).format(Number(product.price)); // Converte para número antes da formatação
+   minimumFractionDigits: 2, 
+   maximumFractionDigits: 2, 
+ }).format(Number(product.price)); 
 
 
   productElement.innerHTML = `
@@ -41,10 +29,33 @@ function renderProduct(product: Product, index: number): HTMLDivElement {
   <button class="botao-compra">Comprar</button>
   </div>
   `;
+  const buyButton = productElement.querySelector('.botao-compra');
+  if (buyButton) {
+    buyButton.addEventListener('click', () => {
+      addToCart(product);
+      updateCartCounter();
+    });
+  }
+  
   return productElement;
 }
 
 
+
+
+function addToCart(product: Product): void {
+  // Lógica para adicionar o produto ao carrinho (pode ser armazenado em um array, servidor, etc.)
+  console.log(`Produto adicionado ao carrinho: ${product.name}`);
+  itemCount++;
+}
+
+function updateCartCounter(): void {
+  const contadorSacola = document.getElementById('contador-sacola');
+  if (contadorSacola) {
+    contadorSacola.textContent = itemCount.toString();
+    contadorSacola.style.display = 'block'; // Exibe o contador
+  }
+}
 
 function renderProducts(products: Product[], startIndex: number, endIndex: number): void {
   const productContainer = document.getElementById("productContainer");
