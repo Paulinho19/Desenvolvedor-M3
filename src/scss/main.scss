@@ -144,13 +144,17 @@ body {
     .tamanhos-container {
       display: flex;
       flex-wrap: wrap;
-      width: 12rem;
-      gap: 0.9rem;
+      width: 13rem;
+      gap: 1.8rem;
       text-align: center;
+      input[type="radio"] {
+        display: none;
+      }
     }
+
     .tamanho {
       height: 30px;
-      width: 34px;
+      width: 40px;
       border: 1px solid $cinza1;
       color: $cinza1;
       font-size: 1rem;
@@ -228,6 +232,63 @@ body {
       font-weight: bold;
       text-transform: uppercase;
       cursor: pointer;
+    }
+  }
+
+  .botoes {
+    display: none;
+  }
+
+  #filtrarButton,
+  #ordenarButton {
+    width: 46vw;
+    height: 3rem;
+    background-color: #fff;
+    border: 1px solid $cinza1;
+    color: $cinza1;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 1700px) {
+    body {
+      width: 100vw;
+    }
+    .barra-lateral,
+    #opcao label,
+    #opcoes {
+      display: none;
+    }
+
+    #navbar-container,
+    .linha {
+      width: 100vw;
+    }
+
+    #main-container {
+      width: 100vw;
+    }
+
+    #product-container {
+      gap: 0;
+    }
+
+    #categoria {
+      flex-direction: column;
+      align-items: center;
+
+      p.blusas {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .botoes {
+        display: flex;
+      }
+
+      .texto-rodape {
+        font-size: 12px;
+      }
     }
   }
 }

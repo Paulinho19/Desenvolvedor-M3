@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Desenvolvedor M3</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,6 +19,7 @@
   </head>
 
   <body>
+    <div id="main-container">
     <nav id="navbar-container">
       <div class="imagens">
         <a href="/">
@@ -36,7 +38,11 @@
     <div class="linha"></div>
 
     <section id="categoria">
-      <p>Blusas</p>
+      <p class="blusas">Blusas</p>
+      <div class="botoes">
+        <button id="filtrarButton">Filtrar</button>
+        <button id="ordenarButton">Ordenar</button>
+      </div>
 
       <div id="opcao">
         <form id="opcao">
@@ -84,17 +90,50 @@
           <h2 class="veja-mais-cores">Ver todas as cores</h2>
           <h3 class="titulo-tamanho">Tamanhos</h3>
           <form class="tamanhos-container">
-            <option class="tamanho">P</option>
-            <option class="tamanho">M</option>
-            <option class="tamanho">G</option>
-            <option class="tamanho">GG</option>
-            <option class="tamanho">U</option>
-            <option class="tamanho">36</option>
-            <option class="tamanho">38</option>
-            <option class="tamanho">40</option>
-            <option class="tamanho">42</option>
-            <option class="tamanho">44</option>
-            <option class="tamanho">46</option>
+            <label>
+              <input type="radio" name="tamanho" value="P" />
+              <span class="tamanho">P</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="M" />
+              <span class="tamanho">M</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="G" />
+              <span class="tamanho">G</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="GG" />
+              <span class="tamanho">GG</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="U" />
+              <span class="tamanho">U</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="36" />
+              <span class="tamanho">36</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="38" />
+              <span class="tamanho">38</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="40" />
+              <span class="tamanho">40</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="42" />
+              <span class="tamanho">42</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="44" />
+              <span class="tamanho">44</span>
+          </label>
+          <label>
+              <input type="radio" name="tamanho" value="46" />
+              <span class="tamanho">46</span>
+          </label>
           </form>
           <h2 class="faixa-de-preco">Faixa de Preço</h2>
           <form class="precos-container">
@@ -131,7 +170,7 @@
         </div>
       </aside>
 
-      <section>
+      <section >
         <div id="productContainer"></div>
         <div class="carregar-mais">
           <button id="loadMoreButton">Carregar mais</button>
@@ -142,6 +181,22 @@
     <footer class="rodape">
       <p class="texto-rodape">Agência M3 - Agência de Performance Digital</p>
     </footer>
+    </div>
+
+    <script>
+       const labels = document.querySelectorAll('.tamanhos-container label');
+
+    labels.forEach(label => {
+        label.addEventListener('click', () => {
+            labels.forEach(otherLabel => {
+                otherLabel.querySelector('input[type="radio"]').checked = false;
+                otherLabel.querySelector('.tamanho').style.backgroundColor = '';
+            });
+            label.querySelector('input[type="radio"]').checked = true;
+            label.querySelector('.tamanho').style.backgroundColor = '#00c0ee';
+        });
+    });
+    </script>
   </body>
 
   <script src="bundle.js"></script>

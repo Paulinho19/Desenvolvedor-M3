@@ -46,7 +46,6 @@ function renderProduct(product: Product, index: number): HTMLDivElement {
 
 
 function addToCart(product: Product): void {
-  // Lógica para adicionar o produto ao carrinho (pode ser armazenado em um array, servidor, etc.)
   console.log(`Produto adicionado ao carrinho: ${product.name}`);
   itemCount++;
 }
@@ -55,7 +54,7 @@ function updateCartCounter(): void {
   const contadorSacola = document.getElementById('contador-sacola');
   if (contadorSacola) {
     contadorSacola.textContent = itemCount.toString();
-    contadorSacola.style.display = 'block'; // Exibe o contador
+    contadorSacola.style.display = 'block'; 
   }
 }
 
@@ -73,6 +72,31 @@ function renderProducts(products: Product[], startIndex: number, endIndex: numbe
     allProducts.push(products[i]);
   }
 }
+
+function filterProducts(products: Product[], filters: { color: string; size: string }): Product[] {
+  return products.filter(product => {
+     const matchesColor = filters.color === "" || product.color === filters.color;
+     const matchesSize = filters.size === "" || product.size.includes(filters.size);
+     return matchesColor && matchesSize;
+  });
+ }
+
+ function renderFilteredProducts(filteredProducts: Product[]): void {
+  const productContainer = document.getElementById("productContainer");
+  if (!productContainer) {
+     console.error("Element with id 'productContainer' not found.");
+     return;
+  }
+ 
+  productContainer.innerHTML = ""; 
+ 
+  filteredProducts.forEach((product, index) => {
+     const productElement = renderProduct(product, index);
+     productContainer.appendChild(productElement);
+  });
+ }
+
+
 
 async function fetchProducts(): Promise<Product[]> {
   const response = await fetch(serverUrl);
@@ -94,13 +118,7 @@ async function fetchProducts(): Promise<Product[]> {
   }));
 }
 
-enum Ordenacao {
-  MaisRecente = "mais-recente",
-  MenorPreco = "menor-preco",
-  MaiorPreco = "maior-preco",
-}
 
-let opcaoOrdenacao = Ordenacao.MaisRecente;
 
 async function main(): Promise<void> {
   try {
@@ -119,6 +137,25 @@ async function main(): Promise<void> {
             loadMoreButton.style.display = "none";
           }
         }
+      });
+    }
+
+    const colorSelect = document.getElementById("colorSelect") as HTMLSelectElement;
+    const sizeSelect = document.getElementById("sizeSelect") as HTMLSelectElement;
+
+    if (colorSelect && sizeSelect) {
+      const filters: { color: string; size: string } = { color: "", size: "" };
+
+      colorSelect.addEventListener("change", () => {
+        filters.color = colorSelect.value;
+        const filteredProducts = filterProducts(allProducts, filters);
+        renderFilteredProducts(filteredProducts);
+      });
+
+      sizeSelect.addEventListener("change", () => {
+        filters.size = sizeSelect.value;
+        const filteredProducts = filterProducts(allProducts, filters);
+        renderFilteredProducts(filteredProducts);
       });
     }
 
